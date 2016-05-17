@@ -15,7 +15,7 @@ class AboutRegex(Koan):
             Lesson 1 Matching Literal String
         """
         string = "Hello, my name is Felix and this koans are based on the Ben's book: Regular Expressions in 10 minutes."
-        m = re.search(__, string)
+        m = re.search(m, string)
         self.assertTrue(m and m.group(0) and m.group(0)== 'Felix', "I want my name")
 
     def test_matching_literal_text_how_many(self):
@@ -112,5 +112,3 @@ class AboutRegex(Koan):
         # I want to find the name sam
         change_this_search_string = '[^nc]am'
         self.assertEquals(re.findall(change_this_search_string, string), ['sam.xls'])
-
-

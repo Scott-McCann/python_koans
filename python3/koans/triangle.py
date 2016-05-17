@@ -18,7 +18,17 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    if min([a, b, c])<=0:
+        raise TriangleError
+    x, y, z = sorted([a, b, c])
+    if x + y <= z:
+        raise TriangleError
+    if a == b and b == c and c == a:
+        return 'equilateral'
+    if a == b or b == c or a == c:
+        return 'isosceles'
+    else:
+        return 'scalene'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
